@@ -1,8 +1,17 @@
-datos = {
-    "s1": {"hw1": 80, "hw2": 90, "hw3": 100},
-    "s2": {"hw1": 70, "hw2": 75, "hw3": 85},
-    "s3": {"hw1": 95, "hw2": 85, "hw3": 90}
-}
+def student_averages(data):
+    result = {}
+
+    for student, grades in data.items():
+        if len(grades) == 0:
+            result[student] = 0
+        else:
+            total = sum(grades.values())
+            count = len(grades)
+            result[student] = round(total / count)
+
+    return result
+
+
 def assignment_averages(data):
     totals = {}
     counts = {}
@@ -20,7 +29,6 @@ def assignment_averages(data):
     result = {}
 
     for assignment in totals:
-        average = round(totals[assignment] / counts[assignment])
-        result[assignment] = average
+        result[assignment] = round(totals[assignment] / counts[assignment])
 
     return result
