@@ -16,6 +16,8 @@ while True:
             avg_by_student(my_grades)
         elif seleccion =="b":
             nombres=input("Enter student names (comma-separated):\n")
+            keys = [nombre.strip().title() for nombre in nombres.split(",")]
+            avg_by_student(my_grades, keys)
         else:
             print("Invalid option selected!")
     elif opciones == "3":
