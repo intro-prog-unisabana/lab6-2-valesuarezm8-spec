@@ -1,0 +1,25 @@
+from grades_manager import*
+print("Welcome to the Student Grades Manager!")
+my_grades={}
+while True:
+    opciones=input("""Select an option:  
+    1. Add a student   
+    2. Print student grade averages
+    3. Exit """ )
+    if opciones== "1":
+        my_grades=add_student(my_grades)
+    elif opciones == "2":
+        seleccion = input("""Select an option:  
+        a. Display all students  
+        b. Display selected students  """)
+        if seleccion== "a":
+            avg_by_student(my_grades)
+        elif seleccion =="b":
+            nombres=input("Enter student names (comma-separated):\n")
+        else:
+            print("Invalid option selected!")
+    elif opciones == "3":
+        print("Goodbye!")
+        break    
+    else:
+        print("Invalid option selected!")   
