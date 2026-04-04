@@ -28,6 +28,16 @@ def get_students(student_grades, keys):
         if not found:
             print(f"{estudiante.title()} not found!")
     return resultado
+def avg_by_student(student_grades, keys=None):
+    if keys is None:
+        datos=student_grades
+    else:
+        datos= get_students(student_grades, keys)
+    
+    for estudiante in datos:
+        notas=datos[estudiante].values()
+        promedio=sum(notas)/len(notas)
+        print(f"{estudiante}: {promedio:.1f}")
 
     
 
