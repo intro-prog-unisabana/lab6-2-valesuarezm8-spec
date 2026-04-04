@@ -22,11 +22,11 @@ def get_students(student_grades, keys):
         for student in student_grades:
             if student.lower()==estudiante.lower():
                 resultado[student] = student_grades[student]
-                found==True
+                found =True
                 break
 
-    if not found:
-        print(f"{estudiante.title()} not found!")
+        if not found:
+            print(f"{estudiante.title()} not found!")
     return resultado
 
     
